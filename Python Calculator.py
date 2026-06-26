@@ -1,39 +1,60 @@
-print("Welcome to CoresCalc!")
-print()
+# CoresCalc - Day 2
 
-num1 = float(input("Enter first number: "))
+while True:
+    print("welcome to CoresCalc!")
+    print()
 
-print("Choose operation: (1-4)\n")
-print("  1. Add")
-print("  2. Subtract")
-print("  3. Multiply")
-print("  4. Divide")
-print()
+    try:
+        num1 = float(input("Enter the first number: "))
+    except ValueError:
+        print("That's not a number! try again.")
+        continue
 
-choice = input("Your choice: ")
-num2 = float(input("Enter second number: "))
-print("---------------------------------")
+    while True:
+        print("Choose an operation:")
+        print()
+        print(" 1. Add (+)")
+        print(" 2. Subtract (-)")
+        print(" 3. Multiply (x)")
+        print(" 4. Divide (/)")
+        print(" 5. Done(get result)")
+        print()
 
-if choice == "1":
-    result = num1 + num2
-    print(f"Result: {num1} + {num2} = {result}")
+        choice = input("Your Choice: ")
 
-elif choice == "2":
-    result = num1 - num2
-    print(f"Result: {num1} - {num2} = {result}")
+        if choice == "5":
+            break
+        
+        try:
+            num2 = float(input("Enter next number: "))
+        except ValueError:
+            print("That's not number! Try again.")
+            continue
 
-elif choice == "3":
-    result = num1 * num2
-    print(f"Result: {num1} x {num2} = {result}")
+        if choice == "1":
+            num1 = num1 + num2
+        elif choice =="2":
+            num1 = num1 - num2
+        elif choice == "3":
+            num1 = num1 * num2
+        elif choice == "4":
+            if num2 == 0:
+                print("Cannot divide by 0")
+            else:
+                num1 = num1/num2
+        else:
+            print("Invalid Choice. Please enter 1 to 5")
 
-elif choice == "4":
-    if num2 == 0:
-        print("Error: Cannot divide by zero!")
-    else:
-        result = num1 / num2
-        print(f"Result: {num1} / {num2} = {result}")
+    
+    print()
+    print("-------------------")
+    print(f'Result: {num1}')
+    print("-------------------")
+    print()
 
-else:
-    print("Invalid choice. Please enter 1, 2, 3 or 4.")
-
-print("---------------------------------")
+    again = input("Calculate again? (yes/no)")
+    if again.lower() != "yes":
+        print()
+        print("Thanks for using CoresCalc. Bye!")
+        break
+        
