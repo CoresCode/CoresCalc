@@ -5,7 +5,7 @@ A Python calculator built in 4 days — from terminal to polished GUI.
 - Day 1 - Basic terminal calculator (2 numbers, 4 operations)
 - Day 2 - Chained operations, loop, error handling
 - Day 3 - GUI calculator with Tkinter
-- Day 4 - Coming soon
+- Day 4 - Polished tabbed GUI, BODMAS fix, Area & Data converter
 
 ## Features
 ### Day 1
@@ -28,10 +28,26 @@ A Python calculator built in 4 days — from terminal to polished GUI.
 - Chained operations (2 + 6 + 9 works)
 - Handles divide by zero gracefully
 
+### Day 4
+- Tabbed interface (Calculator, Area, Data)
+- BODMAS correctly followed using eval()
+- Area Converter — km², m², cm², mm², Hectare, Acre
+- Data Converter — Bit, Byte, KB, MB, GB, TB
+
 ## How to run
 ```bash
 python "Python Calculator.py"
 ```
 
-## Note
-Calculator works left to right (linear). BODMAS will be implemented in Day 4.
+## Built with
+- Python 3.x
+- Tkinter (built-in GUI library)
+- ttk (Themed Tkinter widgets)
+
+## What I learned
+- Terminal input/output and basic Python logic
+- While loops, error handling with try/except
+- Building GUIs with Tkinter and ttk
+- Event-driven programming
+- Dictionary-based unit conversion
+- BODMAS evaluation using Python's eval()
